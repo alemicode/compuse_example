@@ -1,4 +1,4 @@
-package com.mohamad.myapplication.domain.util
+package com.codingwithmitch.mvvmrecipeapp.domain.util
 
 interface DomainMapper <T, DomainModel>{
 

@@ -1,4 +1,4 @@
-package com.mohamad.myapplication.repository
+package com.codingwithmitch.mvvmrecipeapp.repository
 
 import com.mohamad.myapplication.domain.model.Recipe
 

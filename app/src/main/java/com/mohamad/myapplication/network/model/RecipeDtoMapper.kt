@@ -1,7 +1,7 @@
-package com.mohamad.myapplication.network.model
+package com.codingwithmitch.mvvmrecipeapp.network.model
 
 import com.mohamad.myapplication.domain.model.Recipe
-import com.mohamad.myapplication.domain.util.DomainMapper
+import com.codingwithmitch.mvvmrecipeapp.domain.util.DomainMapper
 
 class RecipeDtoMapper : DomainMapper<RecipeDto, Recipe> {
 

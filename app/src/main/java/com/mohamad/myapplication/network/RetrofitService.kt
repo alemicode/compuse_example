@@ -1,7 +1,7 @@
-package com.mohamad.myapplication.network
+package com.codingwithmitch.mvvmrecipeapp.network
 
-import com.mohamad.myapplication.network.model.RecipeDto
-import com.mohamad.myapplication.network.response.RecipeSearchResponse
+import com.codingwithmitch.mvvmrecipeapp.network.model.RecipeDto
+import com.codingwithmitch.mvvmrecipeapp.network.response.RecipeSearchResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Query

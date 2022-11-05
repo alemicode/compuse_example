@@ -1,7 +1,6 @@
 package com.mohamad.myapplication.util
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import androidx.annotation.DrawableRes
@@ -15,20 +14,16 @@ import com.bumptech.glide.request.transition.Transition
 import com.mohamad.myapplication.R
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
-const val DEFAULT_RECIPE_IMAGE = R.drawable.dog
+const val DEFAULT_RECIPE_IMAGE = R.drawable.empty_plate
 
 @SuppressLint("UnrememberedMutableState")
 @ExperimentalCoroutinesApi
 @Composable
-fun loadPicture(
-    url: String,
-    @DrawableRes defaultImage: Int,
-): MutableState<Bitmap?> {
+fun loadPicture(url: String, @DrawableRes defaultImage: Int): MutableState<Bitmap?> {
 
     val bitmapState: MutableState<Bitmap?> = mutableStateOf(null)
 
     val context = LocalContext.current
-
     // show default image while image loads
     Glide.with(context)
         .asBitmap()

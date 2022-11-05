@@ -1,12 +1,12 @@
-package com.mohamad.myapplication.repository
+package com.codingwithmitch.mvvmrecipeapp.repository
 
 import com.mohamad.myapplication.domain.model.Recipe
-import com.mohamad.myapplication.network.RecipeService
-import com.mohamad.myapplication.network.model.RecipeDtoMapper
+import com.codingwithmitch.mvvmrecipeapp.network.RecipeService
+import com.codingwithmitch.mvvmrecipeapp.network.model.RecipeDtoMapper
 
 class RecipeRepository_Impl (
-    private val recipeService: RecipeService,
-    private val mapper: RecipeDtoMapper,
+        private val recipeService: RecipeService,
+        private val mapper: RecipeDtoMapper,
 ): RecipeRepository {
 
     override suspend fun search(token: String, page: Int, query: String): List<Recipe> {

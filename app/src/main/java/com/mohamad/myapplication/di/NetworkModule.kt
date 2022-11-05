@@ -1,8 +1,8 @@
 package com.mohamad.myapplication.di
 
+import com.codingwithmitch.mvvmrecipeapp.network.RecipeService
+import com.codingwithmitch.mvvmrecipeapp.network.model.RecipeDtoMapper
 import com.google.gson.GsonBuilder
-import com.mohamad.myapplication.network.RecipeService
-import com.mohamad.myapplication.network.model.RecipeDtoMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

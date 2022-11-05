@@ -1,10 +1,9 @@
 package com.mohamad.myapplication.di
 
-
-import com.mohamad.myapplication.network.RecipeService
-import com.mohamad.myapplication.network.model.RecipeDtoMapper
-import com.mohamad.myapplication.repository.RecipeRepository
-import com.mohamad.myapplication.repository.RecipeRepository_Impl
+import com.codingwithmitch.mvvmrecipeapp.network.RecipeService
+import com.codingwithmitch.mvvmrecipeapp.network.model.RecipeDtoMapper
+import com.codingwithmitch.mvvmrecipeapp.repository.RecipeRepository
+import com.codingwithmitch.mvvmrecipeapp.repository.RecipeRepository_Impl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,9 +17,9 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun provideRecipeRepository(
-        recipeService: RecipeService,
-        recipeMapper: RecipeDtoMapper,
-    ): RecipeRepository {
+            recipeService: RecipeService,
+            recipeMapper: RecipeDtoMapper,
+    ): RecipeRepository{
         return RecipeRepository_Impl(
             recipeService = recipeService,
             mapper = recipeMapper
