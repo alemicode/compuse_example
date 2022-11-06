@@ -1,15 +1,12 @@
 package com.mohamad.myapplication.presentation.theme
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.mohamad.myapplication.presentation.theme.*
+import androidx.compose.ui.graphics.Color.Companion.Black
 
 @SuppressLint("ConflictingOnColor")
 private val LightThemeColors = lightColors(
@@ -18,7 +15,7 @@ private val LightThemeColors = lightColors(
     onPrimary = Black2,
     secondary = Color.White,
     secondaryVariant = Teal300,
-    onSecondary = Color.Black,
+    onSecondary = Black,
     error = RedErrorDark,
     onError = RedErrorLight,
     background = Grey1,
@@ -26,7 +23,6 @@ private val LightThemeColors = lightColors(
     surface = Color.White,
     onSurface = Black2,
 )
-
 
 private val DarkThemeColors = darkColors(
     primary = Blue700,
@@ -41,35 +37,20 @@ private val DarkThemeColors = darkColors(
     onSurface = Color.White,
 )
 
-@ExperimentalMaterialApi
 @Composable
 fun AppTheme(
     darkTheme: Boolean,
-    displayProgressBar: Boolean,
     content: @Composable () -> Unit,
 ) {
     MaterialTheme(
         colors = if (darkTheme) DarkThemeColors else LightThemeColors,
-        typography = QuickSandTypography,
-        shapes = AppShapes
     ){
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(color = if(!darkTheme) Grey1 else Color.Black)
-        ){
-            content()
-//            CircularIndeterminateProgressBar(isDisplayed = displayProgressBar, 0.3f)
-//            DefaultSnackbar(
-//                snackbarHostState = scaffoldState.snackbarHostState,
-//                onDismiss = {
-//                    scaffoldState.snackbarHostState.currentSnackbarData?.dismiss()
-//                },
-//                modifier = Modifier.align(Alignment.BottomCenter)
-//            )
-        }
+        content()
     }
 }
+
+
+
 
 
 

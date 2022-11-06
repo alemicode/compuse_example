@@ -2,6 +2,7 @@ package com.mohamad.myapplication.presentation.components
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -34,10 +35,11 @@ fun SearchAppBar(
     onSelectedCategoryChanged: (String) -> Unit,
     scrollPosition: Int,
     onChangeScrollPosition: (Int) -> Unit,
-) {
+    onToggleTheme: () -> Unit,
+
+    ) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        color = Color.White,
         elevation = 8.dp
     ) {
         Column {
@@ -64,15 +66,14 @@ fun SearchAppBar(
                                 .width(20.dp)
                         )
                     },
-                    textStyle = TextStyle(color = MaterialTheme.colors.onSurface),
-
-                    )
+                )
                 Image(
                     modifier = Modifier
-                        .width(20.dp).height(20.dp)
+                        .width(20.dp)
+                        .height(20.dp)
                         .align(Alignment.CenterVertically)
                         .clickable {
-
+                            onToggleTheme()
                         },
                     painter = painterResource(
                         id = R.drawable.more

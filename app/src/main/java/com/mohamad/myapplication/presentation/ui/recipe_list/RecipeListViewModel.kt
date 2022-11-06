@@ -26,9 +26,21 @@ constructor(
 
     val query = mutableStateOf("")
 
+    val page = mutableStateOf(1)
+    private var recipeListScrollPosition = 0
     val selectedCategory: MutableState<FoodCategory?> = mutableStateOf(null)
 
     var categoryScrollPosition: Int = 0
+
+
+    private fun incrementalPage() {
+        page.value = page.value + 1
+    }
+
+    private fun onChangeRecipeScrollPosition(position: Int) {
+        recipeListScrollPosition = position
+
+    }
 
     init {
         newSearch()
